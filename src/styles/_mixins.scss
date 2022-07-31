@@ -1,0 +1,103 @@
+@mixin fullscreensize() {
+	width: 100vw;
+	height: 100vh;
+}
+
+@mixin flex_center($direction) {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	flex-direction: $direction;
+}
+
+@mixin flex($direction) {
+	display: flex;
+	flex-direction: $direction;
+}
+
+@mixin grid_center() {
+	display: grid;
+	place-items: center;
+}
+
+@mixin buttons {
+	all: unset;
+
+	cursor: pointer;
+	text-decoration: none;
+	text-rendering: optimizeLegibility;
+}
+
+@mixin shadow_deep {
+	text-shadow: 0 -1px 0 #fff, 0 1px 0 #2e2e2e, 0 2px 0 #2c2c2c,
+		0 3px 0 #2a2a2a, 0 4px 0 #282828, 0 5px 0 #262626, 0 6px 0 #242424,
+		0 7px 0 #222, 0 8px 0 #202020, 0 9px 0 #1e1e1e, 0 10px 0 #1c1c1c,
+		0 11px 0 #1a1a1a, 0 12px 0 #181818, 0 13px 0 #161616, 0 14px 0 #141414,
+		0 15px 0 #121212, 0 22px 30px rgba(0, 0, 0, 0.9), -4px 3px 8px rgba(150, 150, 150, 1);
+		
+}
+
+@mixin no_touchy {
+	user-select: none;
+	pointer-events: none;
+}
+
+@mixin bg_text {
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+@mixin bg_gradient {
+	background: linear-gradient(60deg, #f79533, #ff16c1, #ff1154, #1160ff);
+	background-size: 300% 300%;
+}
+
+@mixin bg_gradient_animation {
+	animation: animated_gradient 3s ease alternate infinite;
+}
+
+@mixin h1_title() {
+	all: unset;
+	display: block;
+	font-size: fontz(four);
+	font-family: "Ubuntu", sans-serif;
+	font-weight: bold;
+
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+}
+
+@mixin clamp_position($sides...) {
+	$min: 16px;
+	$pref: 2vw;
+	$max: 500px;
+
+	@each $side in $sides {
+		@if $side == top {
+			top: clamp($min, $pref, $max);
+		} @else if $side == right {
+			right: clamp($min, $pref, $max);
+		} @else if $side == left {
+			left: clamp($min, $pref, $max);
+		} @else if $side == bottom {
+			bottom: clamp($min, $pref, $max);
+		}
+	}
+}
+
+@keyframes animated_gradient {
+	0% {
+		background-position: 0 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0 50%;
+	}
+}
+
+@mixin bordertest {
+	border: 1px solid red;
+}

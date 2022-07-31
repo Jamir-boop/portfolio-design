@@ -1,0 +1,136 @@
+@import "./reset.scss";
+@import "./variables";
+@import "./mixins";
+
+@font-face {
+	font-family: "Inter", sans-serif;
+	src: url("/assets/font/Inter-Black.ttf") format("truetype"),
+		url("/assets/font/Inter-Bold.ttf") format("truetype"),
+		url("/assets/font/Inter-ExtraBold.ttf") format("truetype"),
+		url("/assets/font/Inter-ExtraLight.ttf") format("truetype"),
+		url("/assets/font/Inter-Light.ttf") format("truetype"),
+		url("/assets/font/Inter-Medium.ttf") format("truetype"),
+		url("/assets/font/Inter-Regular.ttf") format("truetype"),
+		url("/assets/font/Inter-SemiBold.ttf") format("truetype"),
+		url("/assets/font/Inter-Thin.ttf") format("truetype");
+}
+
+@import url('https://y78.fr/api/fonts/575ec812ed38a45d3df2dd50/n4/woff?domain=y78.fr&md5=wzax3oJxAun6R5nv-YtJ5g');
+
+body {
+	@include fullscreensize();
+	overflow-x: hidden;
+
+	// font-family: "Inter", sans-serif;
+    font-family: 'custom_416', monospace;
+
+	background-color: $void;
+	color: $dark;
+	box-sizing: border-box;
+}
+
+.video_background {
+    position: relative;
+	overflow: hidden;
+	width: 100vw;
+	height: 100vh;
+    
+    z-index: -99;
+	iframe {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 100vw;
+		height: 100vh;
+		transform: translate(-50%, -50%);
+	}
+}
+.section__main {
+	.section__title {
+		@include fullscreensize();
+		@include grid_center();
+		position: absolute;
+		background-color: transparentize($color: $void, $amount: 0.3);
+
+		h1 {
+			text-align: center;
+
+			font-size: fontz(title);
+            font-weight: 200;
+			text-align: center;
+			color: $white;
+			text-transform: uppercase;
+            text-transform: ital;
+			width: 30%;
+            min-width: 30%;
+			max-width: 30%;
+			span {
+				text-transform: lowercase;
+			}
+		}
+	}
+}
+
+footer {
+	position: relative;
+	.conejo_container {
+		display: flex;
+		-moz-box-pack: center;
+		justify-content: center;
+		align-items: flex-end;
+		height: 60px;
+		overflow: hidden;
+		.conejo {
+			margin-bottom: -16px;
+			color: #ffffff;
+			transform: scale(3);
+			transform-origin: center bottom 0px;
+			.conejosvg {
+				stroke: none;
+				fill: currentcolor;
+				width: 24px;
+				height: 24px;
+				line-height: 0;
+				font-size: 0px;
+				vertical-align: middle;
+			}
+		}
+	}
+	small {
+		span {
+			position: absolute;
+			bottom: 0;
+		}
+		.made_with_love {
+			color: #ffffff6e;
+			right: 5px;
+			font-weight: bold;
+		}
+	}
+}
+
+@media (min-aspect-ratio: 16/9) {
+	.video_background iframe {
+		/* height = 100 * (9 / 16) = 56.25 */
+		height: 56.25vw;
+	}
+}
+@media (max-aspect-ratio: 16/9) {
+	.video_background iframe {
+		/* width = 100 / (9 / 16) = 177.777777 */
+		width: 177.78vh;
+	}
+}
+
+@media all and (max-width: 600px) {
+	.section__main {
+		.section__title {
+			h1 {
+                width: 60%;
+                min-width: 60%;
+                max-width: 60%;
+			}
+		}
+	}
+    
+}
