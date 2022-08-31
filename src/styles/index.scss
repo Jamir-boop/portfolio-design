@@ -15,14 +15,24 @@
 		url("/assets/font/Inter-Thin.ttf") format("truetype");
 }
 
-@import url('https://y78.fr/api/fonts/575ec812ed38a45d3df2dd50/n4/woff?domain=y78.fr&md5=wzax3oJxAun6R5nv-YtJ5g');
+@import url("https://y78.fr/api/fonts/575ec812ed38a45d3df2dd50/n4/woff?domain=y78.fr&md5=wzax3oJxAun6R5nv-YtJ5g");
+
+html,
+body {
+	-ms-overflow-style: none; /* IE and Edge */
+	scrollbar-width: none; /* Firefox */
+
+	&::-webkit-scrollbar {
+		display: none;
+	}
+}
 
 body {
 	@include fullscreensize();
 	overflow-x: hidden;
 
 	// font-family: "Inter", sans-serif;
-    font-family: 'custom_416', monospace;
+	font-family: "custom_416", monospace;
 
 	background-color: $void;
 	color: $dark;
@@ -30,12 +40,12 @@ body {
 }
 
 .video_background {
-    position: relative;
+	position: relative;
 	overflow: hidden;
 	width: 100vw;
 	height: 100vh;
-    
-    z-index: -99;
+
+	z-index: -99;
 	iframe {
 		position: absolute;
 		top: 50%;
@@ -45,29 +55,85 @@ body {
 		transform: translate(-50%, -50%);
 	}
 }
+
 .section__main {
 	.section__title {
-		@include fullscreensize();
 		@include grid_center();
 		position: absolute;
+
+		height: calc(100vh - 30px);
+		width: calc(100vw - 30px);
+		border: 15px solid $white;
+
 		background-color: transparentize($color: $void, $amount: 0.3);
 
 		h1 {
 			text-align: center;
 
 			font-size: fontz(title);
-            font-weight: 200;
+			font-weight: 200;
 			text-align: center;
 			color: $white;
 			text-transform: uppercase;
-            font-style: italic;
+			font-style: italic;
 			width: 30%;
-            min-width: 30%;
+			min-width: 30%;
 			max-width: 30%;
 			span {
 				text-transform: lowercase;
 			}
+			#emoji {
+				font-style: normal;
+			}
 		}
+	}
+}
+
+.down_arrow {
+	position: absolute;
+	height: clamp(30px, 6vw, 60px);
+	width: clamp(30px, 6vw, 60px);
+	transform: scale(0.6);
+	left: 50%;
+	bottom: 50px;
+	transition: all ease-in-out 150ms;
+	animation: arrow-scroll 2s infinite ease;
+	
+	@keyframes arrow-scroll {
+		0% {
+			transform: translateY(0);
+		}
+		50% {
+			transform: translateY(-7px);
+		}
+		55% {
+			transform: translateY(-7px);
+		}
+		100% {
+			transform: translateY(0);
+		}
+	}
+}
+
+.section__proyectos {
+	height: 100vh;
+
+	max-width: 1920px;
+	max-width: 1080px;
+	margin: 0 auto;
+
+	@include bordertest;
+	.proyectos__title {
+		font-size: fontz(title);
+		color: $white;
+		padding: 1rem 5px;
+		width: 100%;
+		
+		border-bottom: 2px dotted $white_transparent;
+
+		text-transform: uppercase;
+		font-weight: bold;
+		// text-align: center;
 	}
 }
 
@@ -126,11 +192,10 @@ footer {
 	.section__main {
 		.section__title {
 			h1 {
-                width: 60%;
-                min-width: 60%;
-                max-width: 60%;
+				width: 60%;
+				min-width: 60%;
+				max-width: 60%;
 			}
 		}
 	}
-    
 }

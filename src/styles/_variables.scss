@@ -4,7 +4,7 @@ $dark: #4d4d4d;
 $white: #f2f2f2;
 $accent_color: #ff3b76;
 $darkaccent: #44101f;
-$gray: transparentize($void, 0.7);
+$white_transparent: transparentize($white, 0.5);
 
 $hover_animation_time: 180ms;
 

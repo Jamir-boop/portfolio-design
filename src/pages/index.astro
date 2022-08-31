@@ -7,25 +7,34 @@ import FooterComponent from "../components/footer.astro";
 
 <BaseComponent title="Jeiser Jamir Vargas | Diseñador Gráfico">
 	<article id="articlescroll">
-
 		<main class="section section__main">
 			<div class="section__title">
-				<h1>
-					Diseñador Web viviendo en el futuro crecido en los 90'<span>s</span> +4 años de experciencia
-					disponible para ti
+				<h1 id="main__paragraph">
+					Diseñador Web viviendo en el futuro crecido en los 90'<span
+						>s</span
+					> +4 años de experciencia disponible para trabajar contigo <span
+						id="emoji">❤</span
+					>
 				</h1>
 			</div>
 
 			<div class="video_background">
 				<iframe
 					src="https://player.vimeo.com/video/168566819?wmode=opaque&api=1&loop=1&muted=1&autoplay=1&player_id=video_video_1&title=0&byline=0&portrait=0&color=3ab9ff"
-					id="video_video_1" allow="autoplay; fullscreen; encrypted-media" class="fade-out" width="640"
-					height="320" frameborder="0"></iframe>
+					id="video_video_1"
+					allow="autoplay; fullscreen; encrypted-media"
+					class="fade-out"
+					width="640"
+					height="320"
+					frameborder="0"></iframe>
 			</div>
-
+			<div class="down_arrow"><img src="assets/image/arrow.svg" alt="arrow"></div>
 		</main>
-
-		<FooterComponent></FooterComponent>
-
+		<section class="section section__proyectos">
+			<h2 class="proyectos__title">Proyectos representativos</h2>
+		</section>
+		
+		<FooterComponent />
 	</article>
+	<script type="text/javascript" src="/assets/js/emoji.js"></script>
 </BaseComponent>
