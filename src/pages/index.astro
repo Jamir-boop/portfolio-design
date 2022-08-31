@@ -28,13 +28,38 @@ import FooterComponent from "../components/footer.astro";
 					height="320"
 					frameborder="0"></iframe>
 			</div>
-			<div class="down_arrow"><img src="assets/image/arrow.svg" alt="arrow"></div>
+			<div class="down_arrow" onclick="scrolltoProjects()">
+				<img src="assets/image/arrow.svg" alt="arrow" />
+			</div>
 		</main>
 		<section class="section section__proyectos">
-			<h2 class="proyectos__title">Proyectos representativos</h2>
+			<h2 class="proyectos__title">Proyectos destacados</h2>
+			<div class="proyectos">
+				<div class="proyectos__item">
+					<div class="proyectos__name">Proyecto1</div>
+					<!-- <img src="assets/image/CP.svg" alt="project image"> -->
+				</div>
+				<div class="proyectos__item">
+					<div class="proyectos__name">Proyecto2</div>
+					<!-- <img src="assets/image/CP.svg" alt="project image"> -->
+				</div>
+				<div class="proyectos__item">
+					<div class="proyectos__name">Proyecto3</div>
+					<!-- <img src="assets/image/CP.svg" alt="project image"> -->
+				</div>
+				<div class="proyectos__item">
+					<div class="proyectos__name">Proyecto1</div>
+				</div>
+				<div class="proyectos__item">
+					<div class="proyectos__name">Proyecto2</div>
+				</div>
+				<div class="proyectos__item">
+					<div class="proyectos__name">Proyecto3</div>
+				</div>
+			</div>
 		</section>
-		
+
 		<FooterComponent />
 	</article>
-	<script type="text/javascript" src="/assets/js/emoji.js"></script>
+	<script type="text/javascript" src="/assets/js/main.js"></script>
 </BaseComponent>

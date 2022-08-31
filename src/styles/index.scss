@@ -27,6 +27,10 @@ body {
 	}
 }
 
+html {
+	scroll-behavior: smooth;
+}
+
 body {
 	@include fullscreensize();
 	overflow-x: hidden;
@@ -60,6 +64,9 @@ body {
 	.section__title {
 		@include grid_center();
 		position: absolute;
+		user-select: none;
+		text-align: justify;
+		text-justify: inter-word;
 
 		height: calc(100vh - 30px);
 		width: calc(100vw - 30px);
@@ -91,14 +98,19 @@ body {
 
 .down_arrow {
 	position: absolute;
-	height: clamp(30px, 6vw, 60px);
-	width: clamp(30px, 6vw, 60px);
+	$width: clamp(30px, 6vw, 60px);
+	height: $width;
+	width: $width;
 	transform: scale(0.6);
-	left: 50%;
+	margin: 0 auto;
+	left: 0;
+	right: 0;
 	bottom: 50px;
+	cursor: pointer;
+
 	transition: all ease-in-out 150ms;
 	animation: arrow-scroll 2s infinite ease;
-	
+
 	@keyframes arrow-scroll {
 		0% {
 			transform: translateY(0);
@@ -115,6 +127,7 @@ body {
 	}
 }
 
+// PROYECTOS
 .section__proyectos {
 	height: 100vh;
 
@@ -128,15 +141,49 @@ body {
 		color: $white;
 		padding: 1rem 5px;
 		width: 100%;
-		
+
 		border-bottom: 2px dotted $white_transparent;
 
 		text-transform: uppercase;
 		font-weight: bold;
-		// text-align: center;
+		text-align: center;
 	}
 }
 
+.proyectos {
+	@include flex(row);
+	justify-content: space-between;
+	flex-wrap: wrap;
+	flex-flow: row wrap;
+	position: relative;
+
+	&__item {
+		position: relative;
+		height: 200px;
+		width: 300px;
+		margin-bottom: 2rem;
+		@include bordertest;
+		overflow: hidden;
+		// background: url("assets/image/sho.png") no-repeat center top;
+		// background: url("assets/image/CP.svg") no-repeat center center;
+		background-size: cover;
+
+		img {
+			position: absolute;
+			text-align: center;
+			width: 200%;
+		}
+	}
+	&__name {
+		@include proyecto__name;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		background-color: $void;
+		// CAMBIAR A DISPLAY GRID 
+	}
+}
 footer {
 	position: relative;
 	.conejo_container {

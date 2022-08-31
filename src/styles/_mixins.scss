@@ -101,3 +101,10 @@
 @mixin bordertest {
 	border: 1px solid red;
 }
+
+@mixin proyecto__name {
+	font-size: 1rem;
+	color: $white;
+	font-weight: bold;
+	text-transform: capitalize;
+}
